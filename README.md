@@ -7,12 +7,12 @@ Este projeto é um exemplo de aplicação da placa RFID usando como base o Ardui
 | ---      | ---       | ---      | ---     |
 | 1 | [Arduino](https://www.wjcomponentes.com.br/uno-ch340?parceiro=6298&gad_source=4&gclid=EAIaIQobChMIqNidsZvmhgMVYB6tBh0KiQYaEAQYCCABEgKJufD_BwE)     | 5V   | R$ 54,00  |
 | 1 | [Kit RFID](https://www.wjcomponentes.com.br/sensor-rfid?parceiro=6298&gad_source=4&gclid=EAIaIQobChMIq6bMpJnmhgMV1SCtBh31tAkMEAQYAyABEgK4evD_BwE)  | 13,56Mhz    |  R$ 20,00   |
-| 2 | [LED Cristal](https://www.wjcomponentes.com.br/resistores-leds/leds/led-5-mm-difuso?variant_id=257&parceiro=6298&gad_source=4&gclid=EAIaIQobChMIhY7UsZrmhgMVGzStBh1BAQ8tEAQYBiABEgKwevD_BwE) | 2V/20mA | R$ 4,00 |
-| 2 | [LED Vermelho](https://www.wjcomponentes.com.br/resistores-leds/leds/led-5-mm-difuso?variant_id=257&parceiro=6298&gad_source=4&gclid=EAIaIQobChMIhY7UsZrmhgMVGzStBh1BAQ8tEAQYBiABEgKwevD_BwE) | 2V/20mA | R$ 4,00 |
+| 2 | [LED Cristal](https://www.wjcomponentes.com.br/resistores-leds/leds/led-5-mm-difuso?variant_id=257&parceiro=6298&gad_source=4&gclid=EAIaIQobChMIhY7UsZrmhgMVGzStBh1BAQ8tEAQYBiABEgKwevD_BwE) | 2V/20mA | R$ 2,00 |
+| 2 | [LED Vermelho](https://www.wjcomponentes.com.br/resistores-leds/leds/led-5-mm-difuso?variant_id=257&parceiro=6298&gad_source=4&gclid=EAIaIQobChMIhY7UsZrmhgMVGzStBh1BAQ8tEAQYBiABEgKwevD_BwE) | 2V/20mA | R$ 2,00 |
 | 4     | [Resistor 2k2](https://www.edfcomponentes.com.br/resistor/resistor-2k2-14w-5-2200-ohms-cr25)     | 2200 Ω 1/4W    | R$ 0,07  |
 | 1     | [Protoboard](https://www.wjcomponentes.com.br/protoboard-830?parceiro=6298&gad_source=1&gclid=EAIaIQobChMIzp6Mz5zmhgMVSFxIAB1AOAIeEAQYBCABEgJrq_D_BwE)        | 830 furos    | R$ 10,00  |
 
-Valor Total: R$ 59,77
+Valor Total: R$ 92,28
 
 ### Vídeos do projeto funcionando
 
@@ -20,52 +20,34 @@ Valor Total: R$ 59,77
 
 
 ## Descrição dos Componentes
-### Transformador: 
-Um transformador é um dispositivo elétrico que altera os níveis de tensão em um circuito, baseado no princípio da indução eletromagnética descoberto por Michael Faraday. Em nosso projeto, utilizamos um transformador de 12+12 V para obter uma tensão de 24 V.
+### Arduino: 
+Arduino é uma placa de prototipagem eletrônica que permite, de maneira fácil, a integração entre software e hardware. Além disso, devido a sua versatilidade, o Arduino é usado em vários tipos de projetos, desde brinquedos até automações para a melhora da vida cotidiana.
 
-### Diodos:
-Componentes elétricos que permitem o fluxo de corrente em uma única direção são utilizados no projeto para montar uma ponte de diodos. Essa ponte atua como um retificador de tensão, aproveitando ambos os ciclos da corrente alternada.
+### Placa RFID:
+RFID, sigla para “Radio Frequency Identification”, significa “identificação por radiofrequência”. Com essa placa, é possível detectar chips que funcionam por radiofrequência, sendo muito utilizada em identificações rápidas por meio de cartões.
 
 ### Resistores:
-Um resistor é um componente elétrico que limita o fluxo de corrente em um circuito. Ele dissipa energia na forma de calor e é utilizado para controlar níveis de tensão e corrente.  No nosso projeto foram utilizados dois resistores de 2.2k, um de 4.4k e um de 120k.
+Um resistor é um componente elétrico que limita o fluxo de corrente em um circuito. Ele dissipa energia na forma de calor e é utilizado para controlar níveis de tensão e corrente. No nosso projeto foram utilizados quatro resistores de 2.2k.
 
-### Capacitor:
-Um capacitor é um componente eletrônico que armazena energia elétrica em um campo elétrico, composto por duas placas condutoras separadas por um material dielétrico. Ele é usado para filtrar sinais, estabilizar tensão e armazenar energia temporariamente. Em nosso projeto, ele foi utilizado para reduzir o ripple do sistema.
+### Botão:
+Botão é um componente elétrico que, ao ser pressionado, permite que haja a passagem de corrente naquele ponto.
 
-### Potenciômetro:
-Componente com resistência ajustável que regula o fluxo de corrente e altera os níveis de tensão do circuito. Neste projeto, foi utilizado para selecionar os níveis de tensão entre 3V e 12V, conforme especificado.
-
-### Diodo Zener:
-Um diodo Zener é um tipo especial de diodo que permite o fluxo de corrente elétrica não só no sentido direto, mas também no sentido inverso quando a tensão aplicada ultrapassa um valor específico, chamado de tensão de Zener. Foi usado para garantir que a tensão ficasse abaixo de 13V no final do circuito, eliminando completamente o ripple. 
-
-### Transistor:
-Um transistor é um componente eletrônico semicondutor utilizado para amplificar ou comutar sinais elétricos. Ele possui três terminais: emissor, base e coletor, e opera controlando a corrente entre o coletor e o emissor através da corrente aplicada na base. Em nosso projeto, o transistor é empregado para controlar a amplificação de sinais e a comutação, essencial para o funcionamento eficiente do circuito.
+### Led:
+Led é um componente que, ao receber corrente, começa a brilhar. Em nosso projeto, o Led será a representação da fechadura, que será aberta com determinados cartões cadastrados.
 
 
 
-## Conversão de Energia AC para DC Regulada
+### Cadastro Cartão Mestre:
 
-Neste projeto, o objetivo é converter um sinal elétrico de corrente alternada (AC) de 127V e 60Hz em uma voltagem contínua (DC) regulada entre 3V e 12V. Aqui estão os passos principais do processo:
 
-### Transformação: 
-Utilizamos um transformador para reduzir a alta voltagem AC de 127V para cerca de 24,6V, mantendo o formato da onda AC intacto.
+### Cadastro Cartão de Acesso: 
 
-### Retificação:
-Os diodos retificadores convertem o sinal AC em um sinal DC positivo, permitindo que a corrente flua em apenas um sentido e eliminando os ciclos negativos da onda AC.
 
-![retificação](https://github.com/JhonatanBarboza/Fonte_de_tensao/assets/170869780/207acd34-a62c-4003-acb8-71223c2aec8b)
+### Acesso:
 
-<sub>imagem 1
 
-### Filtragem: 
-Um capacitor é empregado para suavizar o sinal DC retificado, reduzindo as variações de voltagem (ripple) e produzindo uma saída mais estável.
+### Reset do Cartão Mestre: 
 
-![ripple-destaque-1](https://github.com/JhonatanBarboza/Fonte_de_tensao/assets/170869780/d602ba6c-241b-4aac-9589-914851832a39)
-
-<sub>imagem 2
-
-### Regulação: 
-Um diodo Zener é utilizado para fixar a voltagem em 13V, eliminando pequenas flutuações indesejadas na saída. Além disso, um potenciômetro é ajustado para permitir a seleção da voltagem final entre 3V e 12V conforme necessário.
 
 
 ## Cálculos
