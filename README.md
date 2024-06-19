@@ -38,95 +38,19 @@ Led é um componente que, ao receber corrente, começa a brilhar. Em nosso proje
 
 
 ### Cadastro Cartão Mestre:
-
+O cartão mestre será o primeiro cartão a ser cadastrado no Arduino. Por isso, ele terá mais permissões, podendo cadastrar outros cartões no sistema da fechadura. O cadastro é feito com a aproximação do cartão perto do sensor até que o último LED da direita pare de piscar. Quando isso ocorrer, o cartão já foi cadastrado.
 
 ### Cadastro Cartão de Acesso: 
-
+Depois de cadastrar o cartão mestre, é possível cadastrar outros cartões também. Para isso, é necessário aproximar o cartão mestre do sensor, em seguida aproximar o cartão a ser cadastrado e, por fim, aproximar novamente o cartão mestre. Dessa maneira, o novo cartão registrado também terá permissão para abrir a fechadura.
 
 ### Acesso:
-
+Para a abertura da fechadura basta aproximar o cartão à placa RFID e esperar a liberação. O acesso ocorre apenas com cartões cadastrados. Portanto, para permitir que outras pessoas entrem em um local com essa fechadura, é necessário registrar um novo cartão de acesso.
 
 ### Reset do Cartão Mestre: 
+Às vezes, por algum motivo qualquer, pode ocorrer a perda do cartão mestre. Por isso, a fechadura possui um procedimento para substituí-lo. Para isso, é necessário pressionar o botão por 10 segundos até que o segundo LED da esquerda para a direita pare de voltar a brilhar. Após isso, basta realizar o cadastro do novo cartão mestre.
 
 
-
-## Cálculos
-
-### Razão do Transformador
-
-Para trabalhar com uma saída de tensão de \( V_s = 24,4V \) (medido na prática) e um transformador com uma razão de 6,96, usamos a equação do transformador para calcular a tensão de entrada necessária.
-
-#### Tensão de Pico
-
-Primeiramente, calculamos a tensão de pico V(pico) da entrada senoidal:
-
-$$ V_{\text{pico}} = V_{\text{entrada}} \times \sqrt{2} $$
-
-Onde:
-- V(entrada) é a tensão de entrada da tomada (127V).
-
-Substituindo os valores:
-
-$$ V_{\text{pico}} = 127V \times \sqrt{2} = 179,6V $$
-
-#### Razão do Transformador
-
-Desejando um transformador que produza uma tensão de saída (Vs) de 24,4V com uma razão de 6,96, utilizamos a relação do transformador:
-
-$$ \frac{1}{6,96} = \frac{V_s}{V_{\text{pico}}} $$
-
-Resolvendo para V(s):
-
-$$ V_s = \frac{V_{\text{pico}}}{6,96} $$
-
-Substituindo os valores:
-
-$$ V_s = \frac{179,6V}{6,96} \approx 25,8V $$
-
-Considerando que o diodo precisa de uma tensão mínima de 0,7V cada, devemos subtrair 1,4V da tensão de saída:
-
-$$ V_s = 25,8V - 1,4V = 24,4V $$
-
-Portanto, a tensão de saída ajustada é de 24,4V.
-##
-### Cálculo da Tensão de Ripple (Vripple)
-
-Para calcular a tensão de ripple, consideramos uma tensão de ripple de 10% da tensão de saída.
-
-$$ V_{\text{ripple}} = 0,1 \times V_s $$
-
-Substituindo o valor da tensão de saída:
-
-$$ V_{\text{ripple}} = 0,1 \times 24,4V = 2,44V $$
-
-Portanto, a tensão de ripple é 2,44V.
-##
-### Cálculo da Tensão Média
-
-A tensão média V(média) é a média aritmética entre a tensão mínima e a tensão máxima, portanto:
-
-1. **Identificação dos limites de variação**:
-- Tensão mínima: 23,6V
-- Tensão máxima: 24,6V
-
-2. **Cálculo da Tensão Média**:
-- A tensão média é calculada pela média aritmética entre V(min) e V (max):
-
-$$ V_{\text{média}} = \frac{V_{\text{min}} + V_{\text{max}}}{2} $$
-
-   Substituindo os valores conhecidos:
-
-$$ V_{\text{média}} = \frac{23,6V + 24,6V}{2} $$
-
-$$ V_{\text{média}} = \frac{48,2V}{2} $$
-
-$$ V_{\text{média}} = 24,1V $$
-
-Portanto, a tensão média entre 23,6V e 24,6V é de aproximadamente 24,1V.
-##
-### Correntes:
-##
-### Capacitância:
+### Código: https://www.arduinoecia.com.br/controle-de-acesso-modulo-rfid-rc522/
 
 
 ### Circuito FALSTAD
