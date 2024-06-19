@@ -44,10 +44,6 @@ Para a abertura da fechadura basta aproximar o cartão à placa RFID e esperar a
 ### Reset do Cartão Mestre: 
 Às vezes, por algum motivo qualquer, pode ocorrer a perda do cartão mestre. Por isso, a fechadura possui um procedimento para substituí-lo. Para isso, é necessário pressionar o botão por 10 segundos até que o segundo LED da esquerda para a direita pare de voltar a brilhar. Após isso, basta realizar o cadastro do novo cartão mestre.
 
-
-[Código](https://www.arduinoecia.com.br/controle-de-acesso-modulo-rfid-rc522/)
-
-
 ### Circuito tinkercad
 
 ![Design sem nome (2)](https://github.com/JhonatanBarboza/Arduino/assets/170869780/8a1e4160-2e35-4807-8d3e-955325a2affa)
@@ -59,6 +55,23 @@ Para a abertura da fechadura basta aproximar o cartão à placa RFID e esperar a
 ### Vídeo do projeto funcionando
 
 [video](https://www.youtube.com/shorts/f6pqwsJiKrs)
+
+#### Cógido para seguir linha (arquivo segue_linha)
+
+      #include <Servo.h>
+      Servo myservo;
+
+      
+      /* definir leitor de linha */
+      #define LT1 digitalRead(11)
+      #define LT2 digitalRead(4)
+      #define LT3 digitalRead(2)
+
+
+      /* definir pinos de saida de controle logico */
+      int in1=9;
+      
+[Código](https://www.arduinoecia.com.br/controle-de-acesso-modulo-rfid-rc522/)
 
 ### Resposáveis
 - Jhonatan Barboza da Silva
