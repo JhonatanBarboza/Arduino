@@ -54,7 +54,7 @@ Para a abertura da fechadura basta aproximar o cartão à placa RFID e esperar a
 
 ## Fotos do Projeto
 
-![foto jpg2](https://github.com/JhonatanBarboza/Arduino/assets/170869780/60fdd50e-0f51-410a-bcde-781585bd4a48)
+![foto 2](https://github.com/JhonatanBarboza/Arduino/assets/170869780/fa4411ff-dc62-465f-b4b5-a9c23a04056c)
 
 ### Vídeo do projeto funcionando
 
