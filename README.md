@@ -62,14 +62,250 @@ Para a abertura da fechadura basta aproximar o cartão à placa RFID e esperar a
       Servo myservo;
 
       
-      /* definir leitor de linha */
-      #define LT1 digitalRead(11)
-      #define LT2 digitalRead(4)
-      #define LT3 digitalRead(2)
+#include <SPI.h>
+#include <MFRC522.h>
+#include <stdbool.h>
+
+//Definindo nomeando os pinos
+#define   SS_PIN 10
+#define   RST_PIN 9
+#define   led1 7
+#define   led2 6
+#define   led3 5
+#define   ledf 4
+#define   button 3
+
+//Criando uma instância do mfrc
+MFRC522 mfrc522(SS_PIN, RST_PIN);
+
+//Protótipo da função de funcionamento do RFID
+void rfid_func(); 
+
+//Variável responsável por indicar a presença do cartão mestre
+bool mestre = 0;
+
+//Vetor de string que irá armazenar os códigos
+String keys[100];
+
+//Índices do vetor de strings
+int cont = 0;
+
+//Setando os valores iniciais
+void setup() 
+{
+
+  //Setando os output e inputs que serão usados
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+  pinMode(led3, OUTPUT);
+  pinMode(ledf, OUTPUT);
+  pinMode(button, INPUT);
+  
+  Serial.begin(9600);   // Inicia comunicação Serial em 9600 baud rate
+  SPI.begin();          // Inicia comunicação SPI bus
+  mfrc522.PCD_Init();   // Inicia MFRC522
+  
+  Serial.println("Aproxime o seu cartao do leitor...");
+  Serial.println();
+
+  //O led azul(led3) começa ligado
+  digitalWrite(led1, LOW);
+  digitalWrite(led2, LOW);
+  digitalWrite(led3, HIGH);
+  digitalWrite(ledf, LOW);
+  
+   
+  
+} //end setup
 
 
-      /* definir pinos de saida de controle logico */
-      int in1=9;
+// --- Loop Infinito ---
+void loop() 
+{
+    rfid_func();   //chama função para identificação de tags RFID
+} //end loop
+
+
+void rfid_func()                            //Função para identificação das tags RFID
+{
+      // -- Verifica novas tags --
+      if ( ! mfrc522.PICC_IsNewCardPresent()) 
+      {
+        return;
+      }
+      // Seleciona um dos cartões
+      if ( ! mfrc522.PICC_ReadCardSerial()) 
+      {
+        return;
+      }
+      
+      //Se nenhum cartão mestre estiver cadastrado
+      if(mestre == 0)
+      {
+          //Leitura do número do cartão
+          Serial.print("UID da tag :");
+          String conteudo= "";
+          String conteudo1= "";
+          byte letra;
+          for (byte i = 0; i < mfrc522.uid.size; i++) 
+          {
+             Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
+             Serial.print(mfrc522.uid.uidByte[i], HEX);
+             conteudo.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "));
+             conteudo.concat(String(mfrc522.uid.uidByte[i], HEX));
+             conteudo1.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "));
+             conteudo1.concat(String(mfrc522.uid.uidByte[i], HEX));
+          }
+          keys[cont] = conteudo1;
+          //Incremento índice
+          cont++;
+          //Trocando o valor de "mestre", uma vez que ele já foi cadastrado
+          mestre = 1;
+          //Piscando o led azul uma vez
+          digitalWrite(led3, LOW);
+          delay(800);
+          digitalWrite(led3, HIGH);
+          Serial.println();
+          Serial.print("Mensagem : ");
+          conteudo.toUpperCase(); 
+          return;
+      }
+      
+      //Leitura do cartão, já com o cartão mestre cadastrado
+      Serial.print("UID da tag :");
+      String conteudo= "";
+      byte letra;
+      for (byte i = 0; i < mfrc522.uid.size; i++) 
+      {
+         Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
+         Serial.print(mfrc522.uid.uidByte[i], HEX);
+         conteudo.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "));
+         conteudo.concat(String(mfrc522.uid.uidByte[i], HEX));
+         keys[cont].concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "));
+         keys[cont].concat(String(mfrc522.uid.uidByte[i], HEX));
+      }
+      cont++;
+      Serial.println();
+      Serial.print("Mensagem : ");
+      conteudo.toUpperCase(); 
+      
+      //Se o cartão aproximado for o mestre
+      if (conteudo.substring(1) == keys[0])
+      {
+        int finish = 0;
+        
+        
+        //Piscar todos os leds 3 vezes para sinalizar que o mestre foi lido
+        digitalWrite(led1, HIGH);
+        digitalWrite(led2, HIGH);
+        digitalWrite(led3, HIGH);
+        delay(800);
+        digitalWrite(led1, LOW);
+        digitalWrite(led2, LOW);
+        digitalWrite(led3, LOW);
+        delay(800);
+        digitalWrite(led1, HIGH);
+        digitalWrite(led2, HIGH);
+        digitalWrite(led3, HIGH);
+        delay(800);
+        digitalWrite(led1, LOW);
+        digitalWrite(led2, LOW);
+        digitalWrite(led3, LOW);
+        
+        Serial.println("Aproxime o cartão a ser cadastrado");
+        Serial.println();
+        
+        //Loop até ser aproximado outro cartão(cartão a ser cadastrado)
+        while(finish == 0)
+        {
+            if(mfrc522.PICC_IsNewCardPresent())
+            {
+                if(mfrc522.PICC_ReadCardSerial())
+                {
+                    Serial.print("UID da tag :");
+                      String conteudo= "";
+                      byte letra;
+                      for (byte i = 0; i < mfrc522.uid.size; i++) 
+                      {
+                         Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
+                         Serial.print(mfrc522.uid.uidByte[i], HEX);
+                         conteudo.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "));
+                         conteudo.concat(String(mfrc522.uid.uidByte[i], HEX));
+                         keys[cont].concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "));
+                         keys[cont].concat(String(mfrc522.uid.uidByte[i], HEX));
+                      }
+                      cont++;
+                      //Led verde piscar 2 vezes para sinalizar que o cartão foi cadastrado
+                      digitalWrite(led1, HIGH);
+                      delay(800);
+                      digitalWrite(led1, LOW);
+                      delay(800);
+                      digitalWrite(led1, HIGH);
+                      delay(800);
+                      digitalWrite(led1, LOW);
+                      digitalWrite(led3, HIGH);
+                      Serial.println();
+                      Serial.print("Mensagem : ");
+                      conteudo.toUpperCase(); 
+                      finish = 1;
+                      
+                }
+            }
+        }
+         
+      }
+     
+      //Se o cartão não for o mestre
+      if (conteudo.substring(1) != keys[0]) //outras tags
+      {
+        int finish = 0;
+        //Loop para percorrer o vetor de strings
+        for(int i=0;i<cont-1 && finish == 0;i++)
+        {
+            //Se for encontrado uma string igual ao do cartão, finish = 1 e sairá do loop
+            if(conteudo.substring(1) == keys[i])
+            {
+                finish = 1;
+            }
+        }
+        
+        //Se finish == 1, então foi encontrado
+        if(finish == 1)
+        {
+            //Piscar 3 vezes o led verde
+            digitalWrite(led1, HIGH);
+            delay(800);
+            digitalWrite(led1, LOW);
+            delay(800);
+            digitalWrite(led1, HIGH);
+            delay(800);
+            digitalWrite(led1, LOW);
+            delay(800);
+            digitalWrite(led1, HIGH);
+            delay(800);
+            digitalWrite(led1, LOW);
+        }
+        //Se finish == 0, então não foi encontrado
+        else
+        {
+            //Piscar 3 vezes o led vermelho
+            digitalWrite(led2, HIGH);
+            delay(800);
+            digitalWrite(led2, LOW);
+            delay(800);
+            digitalWrite(led2, HIGH);
+            delay(800);
+            digitalWrite(led2, LOW);
+            delay(800);
+            digitalWrite(led2, HIGH);
+            delay(800);
+            digitalWrite(led2, LOW);
+        }
+        digitalWrite(led3, HIGH);
+      }
+  
+  
+} //end rfid_func
       
 [Código](https://www.arduinoecia.com.br/controle-de-acesso-modulo-rfid-rc522/)
 
