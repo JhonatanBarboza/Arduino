@@ -14,11 +14,6 @@ Este projeto é um exemplo de aplicação da placa RFID usando como base o Ardui
 
 Valor Total: R$ 92,28
 
-### Vídeos do projeto funcionando
-
-[video]
-
-
 ## Descrição dos Componentes
 ### Arduino: 
 Arduino é uma placa de prototipagem eletrônica que permite, de maneira fácil, a integração entre software e hardware. Além disso, devido a sua versatilidade, o Arduino é usado em vários tipos de projetos, desde brinquedos até automações para a melhora da vida cotidiana.
@@ -35,7 +30,7 @@ Botão é um componente elétrico que, ao ser pressionado, permite que haja a pa
 ### Led:
 Led é um componente que, ao receber corrente, começa a brilhar. Em nosso projeto, o Led será a representação da fechadura, que será aberta com determinados cartões cadastrados.
 
-
+## Descrição do funcionamento
 
 ### Cadastro Cartão Mestre:
 O cartão mestre será o primeiro cartão a ser cadastrado no Arduino. Por isso, ele terá mais permissões, podendo cadastrar outros cartões no sistema da fechadura. O cadastro é feito com a aproximação do cartão perto do sensor até que o último LED da direita pare de piscar. Quando isso ocorrer, o cartão já foi cadastrado.
@@ -50,7 +45,7 @@ Para a abertura da fechadura basta aproximar o cartão à placa RFID e esperar a
 Às vezes, por algum motivo qualquer, pode ocorrer a perda do cartão mestre. Por isso, a fechadura possui um procedimento para substituí-lo. Para isso, é necessário pressionar o botão por 10 segundos até que o segundo LED da esquerda para a direita pare de voltar a brilhar. Após isso, basta realizar o cadastro do novo cartão mestre.
 
 
-### Código: https://www.arduinoecia.com.br/controle-de-acesso-modulo-rfid-rc522/
+[Código](https://www.arduinoecia.com.br/controle-de-acesso-modulo-rfid-rc522/)
 
 
 ### Circuito tinkercad
@@ -59,9 +54,11 @@ Para a abertura da fechadura basta aproximar o cartão à placa RFID e esperar a
 
 ## Fotos do Projeto
 
-![min](https://github.com/JhonatanBarboza/Fonte_de_tensao/assets/170869780/e0ab747d-6cb8-43f0-be28-b8d9621ee088)
-![max](https://github.com/JhonatanBarboza/Fonte_de_tensao/assets/170869780/7d4522fb-9ad1-4026-95a0-f721d461094a)
+![foto jpg2](https://github.com/JhonatanBarboza/Arduino/assets/170869780/f3846898-413c-4060-aacb-6ea405f88e0d)
 
+### Vídeo do projeto funcionando
+
+[video](https://www.youtube.com/shorts/f6pqwsJiKrs)
 
 ### Resposáveis
 - Jhonatan Barboza da Silva
