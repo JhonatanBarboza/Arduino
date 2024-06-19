@@ -50,11 +50,11 @@ Para a abertura da fechadura basta aproximar o cartão à placa RFID e esperar a
 
 ### Circuito tinkercad
 
-![Design sem nome (2)](https://github.com/JhonatanBarboza/Arduino/assets/170869780/91305401-d8e2-4ad1-8589-d43b945190eb)
+![Design sem nome (2)](https://github.com/JhonatanBarboza/Arduino/assets/170869780/8a1e4160-2e35-4807-8d3e-955325a2affa)
 
 ## Fotos do Projeto
 
-![foto jpg2](https://github.com/JhonatanBarboza/Arduino/assets/170869780/f3846898-413c-4060-aacb-6ea405f88e0d)
+![foto jpg2](https://github.com/JhonatanBarboza/Arduino/assets/170869780/60fdd50e-0f51-410a-bcde-781585bd4a48)
 
 ### Vídeo do projeto funcionando
 
@@ -65,10 +65,3 @@ Para a abertura da fechadura basta aproximar o cartão à placa RFID e esperar a
 - João Gabriel Pieroli da Silva
 - Pedro Henrique de Sousa Prestes
 - Kevin Ryoji Nakashima
-
-fonte: 
-
-[Imagem 1](https://professor.pucgoias.edu.br/SiteDocente/admin/arquivosUpload/17742/material/Cap%204_ret%20onda%20completa_2017.pdf)
-
-[Imagem 2](https://embarcados.com.br/aprenda-a-analisar-o-ripple-da-sua-fonte/)
-
