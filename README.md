@@ -58,86 +58,82 @@ Para a abertura da fechadura basta aproximar o cartão à placa RFID e esperar a
 
 #### Cógido para seguir linha (arquivo segue_linha)
 
-      #include <Servo.h>
-      Servo myservo;
-
+      #include <SPI.h>
+      #include <MFRC522.h>
+      #include <stdbool.h>
       
-#include <SPI.h>
-#include <MFRC522.h>
-#include <stdbool.h>
-
-//Definindo nomeando os pinos
-#define   SS_PIN 10
-#define   RST_PIN 9
-#define   led1 7
-#define   led2 6
-#define   led3 5
-#define   ledf 4
-#define   button 3
-
-//Criando uma instância do mfrc
-MFRC522 mfrc522(SS_PIN, RST_PIN);
-
-//Protótipo da função de funcionamento do RFID
-void rfid_func(); 
-
-//Variável responsável por indicar a presença do cartão mestre
-bool mestre = 0;
-
-//Vetor de string que irá armazenar os códigos
-String keys[100];
-
-//Índices do vetor de strings
-int cont = 0;
-
-//Setando os valores iniciais
-void setup() 
-{
-
-  //Setando os output e inputs que serão usados
-  pinMode(led1, OUTPUT);
-  pinMode(led2, OUTPUT);
-  pinMode(led3, OUTPUT);
-  pinMode(ledf, OUTPUT);
-  pinMode(button, INPUT);
-  
-  Serial.begin(9600);   // Inicia comunicação Serial em 9600 baud rate
-  SPI.begin();          // Inicia comunicação SPI bus
-  mfrc522.PCD_Init();   // Inicia MFRC522
-  
-  Serial.println("Aproxime o seu cartao do leitor...");
-  Serial.println();
-
-  //O led azul(led3) começa ligado
-  digitalWrite(led1, LOW);
-  digitalWrite(led2, LOW);
-  digitalWrite(led3, HIGH);
-  digitalWrite(ledf, LOW);
-  
-   
-  
-} //end setup
-
-
-// --- Loop Infinito ---
-void loop() 
-{
-    rfid_func();   //chama função para identificação de tags RFID
-} //end loop
-
-
-void rfid_func()                            //Função para identificação das tags RFID
-{
-      // -- Verifica novas tags --
-      if ( ! mfrc522.PICC_IsNewCardPresent()) 
+      //Definindo nomeando os pinos
+      #define   SS_PIN 10
+      #define   RST_PIN 9
+      #define   led1 7
+      #define   led2 6
+      #define   led3 5
+      #define   ledf 4
+      #define   button 3
+      
+      //Criando uma instância do mfrc
+      MFRC522 mfrc522(SS_PIN, RST_PIN);
+      
+      //Protótipo da função de funcionamento do RFID
+      void rfid_func(); 
+      
+      //Variável responsável por indicar a presença do cartão mestre
+      bool mestre = 0;
+      
+      //Vetor de string que irá armazenar os códigos
+      String keys[100];
+      
+      //Índices do vetor de strings
+      int cont = 0;
+      
+      //Setando os valores iniciais
+      void setup() 
       {
-        return;
-      }
-      // Seleciona um dos cartões
-      if ( ! mfrc522.PICC_ReadCardSerial()) 
+      
+        //Setando os output e inputs que serão usados
+        pinMode(led1, OUTPUT);
+        pinMode(led2, OUTPUT);
+        pinMode(led3, OUTPUT);
+        pinMode(ledf, OUTPUT);
+        pinMode(button, INPUT);
+        
+        Serial.begin(9600);   // Inicia comunicação Serial em 9600 baud rate
+        SPI.begin();          // Inicia comunicação SPI bus
+        mfrc522.PCD_Init();   // Inicia MFRC522
+        
+        Serial.println("Aproxime o seu cartao do leitor...");
+        Serial.println();
+      
+        //O led azul(led3) começa ligado
+        digitalWrite(led1, LOW);
+        digitalWrite(led2, LOW);
+        digitalWrite(led3, HIGH);
+        digitalWrite(ledf, LOW);
+        
+         
+        
+      } //end setup
+      
+      
+      // --- Loop Infinito ---
+      void loop() 
       {
-        return;
-      }
+          rfid_func();   //chama função para identificação de tags RFID
+      } //end loop
+      
+      
+      void rfid_func()                            //Função para identificação das tags RFID
+      {
+            // -- Verifica novas tags --
+            if ( ! mfrc522.PICC_IsNewCardPresent()) 
+            {
+              return;
+            }
+            // Seleciona um dos cartões
+            if ( ! mfrc522.PICC_ReadCardSerial()) 
+            {
+              return;
+            }
       
       //Se nenhum cartão mestre estiver cadastrado
       if(mestre == 0)
