@@ -300,8 +300,6 @@ Para a abertura da fechadura basta aproximar o cartão à placa RFID e esperar a
         digitalWrite(led3, HIGH);
       }
   
-  
-} //end rfid_func
       
 [Código](https://www.arduinoecia.com.br/controle-de-acesso-modulo-rfid-rc522/)
 
