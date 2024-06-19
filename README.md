@@ -53,23 +53,9 @@ Para a abertura da fechadura basta aproximar o cartão à placa RFID e esperar a
 ### Código: https://www.arduinoecia.com.br/controle-de-acesso-modulo-rfid-rc522/
 
 
-### Circuito FALSTAD
+### Circuito tinkercad
 
-O circuito a seguir ilustra um esquema simplificado da Fonte de Tensão Ajustável projetada no falstad.
-
-![Circuito fonte de tensao](https://github.com/JhonatanBarboza/Fonte_de_tensao/assets/170869780/a9bb88d5-aff1-49af-bc49-cd9261177960)
-
-[Link do Circuito](https://tinyurl.com/24obwzt2)
-
-### Circuito PCB no EAGLE
-
-#### Esquemático no EAGLE
-
-<img width="750" alt="EAGLE" src="https://github.com/JhonatanBarboza/Fonte_de_tensao/assets/170869780/ac880d5f-2a76-4c06-a4d0-f1967f057047">
-
-#### Board no EAGLE
-
-<img width="750" alt="Captura de tela 2024-06-12 211634" src="https://github.com/JhonatanBarboza/Fonte_de_tensao/assets/170869780/608f7f37-48ac-4ff8-a1dd-6e02533ff465">
+![Design sem nome (2)](https://github.com/JhonatanBarboza/Arduino/assets/170869780/91305401-d8e2-4ad1-8589-d43b945190eb)
 
 ## Fotos do Projeto
 
