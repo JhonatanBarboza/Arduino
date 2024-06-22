@@ -14,6 +14,10 @@ Este projeto é um exemplo de aplicação da placa RFID usando como base o Ardui
 
 Valor Total: R$ 92,28
 
+## Fotos do Projeto
+
+![foto 2](https://github.com/JhonatanBarboza/Arduino/assets/170869780/fa4411ff-dc62-465f-b4b5-a9c23a04056c)
+
 ## Descrição dos Componentes
 ### Arduino: 
 Arduino é uma placa de prototipagem eletrônica que permite, de maneira fácil, a integração entre software e hardware. Além disso, devido a sua versatilidade, o Arduino é usado em vários tipos de projetos, desde brinquedos até automações para a melhora da vida cotidiana.
@@ -48,13 +52,9 @@ Para a abertura da fechadura basta aproximar o cartão à placa RFID e esperar a
 
 ![Design sem nome (2)](https://github.com/JhonatanBarboza/Arduino/assets/170869780/8a1e4160-2e35-4807-8d3e-955325a2affa)
 
-## Fotos do Projeto
-
-![foto 2](https://github.com/JhonatanBarboza/Arduino/assets/170869780/fa4411ff-dc62-465f-b4b5-a9c23a04056c)
-
 ### Vídeo do projeto funcionando
 
-[video](https://www.youtube.com/watch?v=l_4cJWRUbnU&t=158s)
+[video](https://www.youtube.com/watch?v=b47s4_mwbD8&t=50s)
 
 #### Cógido para seguir linha (arquivo segue_linha)
 
