@@ -54,7 +54,7 @@ Para a abertura da fechadura basta aproximar o cartão à placa RFID e esperar a
 
 ### Vídeo do projeto funcionando
 
-[video](https://www.youtube.com/shorts/f6pqwsJiKrs)
+[video](https://www.youtube.com/watch?v=l_4cJWRUbnU&t=158s)
 
 #### Cógido para seguir linha (arquivo segue_linha)
 
