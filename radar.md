@@ -53,7 +53,7 @@ Este projeto consiste em um sistema de radar baseado em Arduino, utilizando um m
 
 ### Circuito tinkercad
 
-![radar](https://github.com/JhonatanBarboza/Arduino/assets/170869780/69b0b58a-ccc0-4f7b-9509-e0e1480973c1)
+![radar](https://github.com/JhonatanBarboza/Arduino/assets/170869780/2acf060a-772e-4036-b7ec-2127f3e5b726)
 
 ### Vídeo do projeto funcionando
 
