@@ -16,7 +16,8 @@ Valor Total: R$ 124,40
 
 ## Fotos do Projeto
 
-![maxresdefault](https://github.com/JhonatanBarboza/Arduino/assets/170869780/3a3f3866-39e1-4414-9527-57920a778af8)
+![maxresdefault](https://github.com/Kryonn/assets/blob/main/image6)
+![maxresdefault](https://github.com/Kryonn/assets/blob/main/image7)
 
 ## Descrição dos Componentes
 ### Arduino: 
@@ -53,7 +54,7 @@ Este projeto consiste em um sistema de sonar baseado em Arduino, utilizando um m
 
 ### Circuito tinkercad
 
-![sonar](https://github.com/JhonatanBarboza/Arduino/assets/170869780/2acf060a-772e-4036-b7ec-2127f3e5b726)
+![sonar](https://github.com/Kryonn/assets/blob/main/image8.jpeg)
 
 ### Vídeo do projeto funcionando
 
