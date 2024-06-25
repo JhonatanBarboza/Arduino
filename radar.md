@@ -63,7 +63,7 @@ https://github.com/JhonatanBarboza/Arduino/assets/151884657/1bbd1c38-a06d-427c-8
 ### Código arduino
           
           // Inclui a biblioteca Servo Motor
-          #include <Servo.h>. 
+          #include <Servo.h>
           
           // Define os pinos Trig e Echo do sensor ultrassônico
           const int trigPin = 10;
