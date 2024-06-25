@@ -16,8 +16,8 @@ Valor Total: R$ 124,40
 
 ## Fotos do Projeto
 
-![WhatsApp Image 2024-06-25 at 11 28 03](https://github.com/JhonatanBarboza/Arduino/assets/151884657/7cb289fe-aab0-4572-8081-41f82ddb4d20)
-![WhatsApp Image 2024-06-25 at 11 27 50](https://github.com/JhonatanBarboza/Arduino/assets/151884657/7412aac4-38b3-4f7a-b373-a06188cb41af)
+![foto1](https://github.com/JhonatanBarboza/Arduino/assets/170869780/60f1985b-e9af-4ffc-8acb-b3b65c46fb4d)
+![foto2](https://github.com/JhonatanBarboza/Arduino/assets/170869780/b8fbec5f-f31f-4b49-93b0-54a09a0d5ec6)
 
 ## Descrição dos Componentes
 ### Arduino: 
