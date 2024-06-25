@@ -1,6 +1,6 @@
 # SSC0180-Eletrônica
-## Projeto: Radar
-Este projeto consiste em um protótipo de radar projetado para detectar e rastrear a aproximação de objetos. Os dados coletados pelo radar serão processados e exibidos em tempo real na tela de um computador, permitindo uma visualização dos objetos.
+## Projeto: Sonar
+Este projeto consiste em um protótipo de sonar projetado para detectar e rastrear a aproximação de objetos. Os dados coletados pelo sonar serão processados e exibidos em tempo real na tela de um computador, permitindo uma visualização dos objetos.
 
 ## Componentes Eletrônicos
 | Quantidade     | Componentes | Especificações | Valor |
@@ -26,10 +26,10 @@ Arduino é uma placa de prototipagem eletrônica que permite, de maneira fácil,
 O sensor de ultrassom HC-SR04 é utilizado para medir distâncias. Ele funciona emitindo pulsos ultrassônicos e calculando o tempo que leva para os ecos retornarem após refletirem em um objeto. No contexto de um projeto de radar, o HC-SR04 foi montado em um micro servo motor, permitindo que ele gire e faça varreduras do ambiente. Conectado ao Arduino, o sensor HC-SR04 fornece leituras de distância em tempo real, que são processadas e exibidas na tela do computador.
 
 ### Servo Motor:
-Um micro servo motor de 9g é um componente ideal para projetos que requerem controle preciso de movimento. Este tipo de servo é compacto e eficiente, oferece torque suficiente para movimentar componentes leves. No contexto de um projeto do radar, o micro servo motor é utilizado para rotacionar sensor do radar, permitindo a varredura do ambiente.
+Um micro servo motor de 9g é um componente ideal para projetos que requerem controle preciso de movimento. Este tipo de servo é compacto e eficiente, oferece torque suficiente para movimentar componentes leves. No contexto de um projeto do radar, o micro servo motor é utilizado para rotacionar sensor do sonar, permitindo a varredura do ambiente.
 
 ## Descrição do funcionamento
-Este projeto consiste em um sistema de radar baseado em Arduino, utilizando um micro servo motor de 9g e um sensor de ultrassom HC-SR04 para detectar e rastrear a aproximação de objetos. O funcionamento do projeto é descrito em etapas a seguir:
+Este projeto consiste em um sistema de sonar baseado em Arduino, utilizando um micro servo motor de 9g e um sensor de ultrassom HC-SR04 para detectar e rastrear a aproximação de objetos. O funcionamento do projeto é descrito em etapas a seguir:
 
 1. **Montagem do Hardware**:
    - O sensor de ultrassom HC-SR04 é montado sobre o micro servo motor de 9g.
@@ -48,18 +48,18 @@ Este projeto consiste em um sistema de radar baseado em Arduino, utilizando um m
    - Os dados coletados são enviados para um computador.
 
 5. **Visualização dos Resultados**:
-   - Os resultados da varredura do radar são exibidos em tempo real na tela do computador.
+   - Os resultados da varredura do sonar são exibidos em tempo real na tela do computador.
 
 
 ### Circuito tinkercad
 
-![radar](https://github.com/JhonatanBarboza/Arduino/assets/170869780/2acf060a-772e-4036-b7ec-2127f3e5b726)
+![sonar](https://github.com/JhonatanBarboza/Arduino/assets/170869780/2acf060a-772e-4036-b7ec-2127f3e5b726)
 
 ### Vídeo do projeto funcionando
 
 [video](https://www.youtube.com/watch?v=kQRYIH2HwfY)
 
-### Cógido arduino
+### Código arduino
           
           // Inclui a biblioteca Servo Motor
           #include <Servo.h>. 
@@ -116,7 +116,7 @@ Este projeto consiste em um sistema de radar baseado em Arduino, utilizando um m
             return distance;
           }
 
-#### Cógido Processing
+#### Código Processing
 
         /*   Arduino Radar Project
          *  
