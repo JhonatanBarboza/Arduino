@@ -277,7 +277,7 @@ Este projeto consiste em um sistema de radar baseado em Arduino, utilizando um m
           popMatrix(); 
         }
 
-### Resposáveis
+### Responsáveis
 - Jhonatan Barboza da Silva
 - João Gabriel Pieroli da Silva
 - Pedro Henrique de Sousa Prestes
