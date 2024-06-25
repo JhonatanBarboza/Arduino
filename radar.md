@@ -118,14 +118,6 @@ https://github.com/JhonatanBarboza/Arduino/assets/151884657/1bbd1c38-a06d-427c-8
           }
 
 #### Código Processing
-
-        /*   Arduino Radar Project
-         *  
-         *  by Dejan Nedelkovski, 
-         *  www.HowToMechatronics.com
-         *  Tradução: PontoMakers
-         *
-         */
         
         import processing.serial.*; // importa biblioteca para comunicação serial
         import java.awt.event.KeyEvent; // biblioteca de importações para ler os dados da porta serial
