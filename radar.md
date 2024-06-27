@@ -82,7 +82,7 @@ https://github.com/JhonatanBarboza/Arduino/assets/151884657/1bbd1c38-a06d-427c-8
           }
           void loop() {
             // gira o Servo Motor de 15 a 165 graus
-            for(int i=15;i<=165;i++){  
+            for(int i=30;i<=165;i++){  
             myServo.write(i);
             delay(30);
             distance = calculateDistance();// Chama uma função para calcular a distância medida pelo sensor ultrassônico para cada grau
@@ -93,7 +93,7 @@ https://github.com/JhonatanBarboza/Arduino/assets/151884657/1bbd1c38-a06d-427c-8
             Serial.print("."); // Envia o caractere de adição ao lado do valor anterior necessário posteriormente no IDE de processamento para indexação
             }
             // Repete as linhas anteriores de 165 a 15 graus
-            for(int i=165;i>15;i--){  
+            for(int i=165;i>30;i--){  
             myServo.write(i);
             delay(30);
             distance = calculateDistance();
@@ -139,7 +139,7 @@ https://github.com/JhonatanBarboza/Arduino/assets/151884657/1bbd1c38-a06d-427c-8
           
          size (1366, 768); // ***MUDE ISTO PARA SUA RESOLUÇÃO DE TELA***
          smooth();
-         myPort = new Serial(this,"COM4", 9600); // inicia a comunicação serial
+         myPort = new Serial(this,"COM3", 9600); // inicia a comunicação serial
          myPort.bufferUntil('.'); // lê os dados da porta serial até o caractere '.' Então, na verdade, lê isto: ângulo, distância.
          orcFont = loadFont("AgencyFB-Reg-30.vlw");
         }
