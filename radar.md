@@ -270,54 +270,54 @@ https://github.com/JhonatanBarboza/Arduino/assets/151884657/1bbd1c38-a06d-427c-8
           popMatrix(); 
         }
 
-### Passo a Passo para Configurar o Projeto de Radar com Arduino e Processing
+## Passo a Passo para Configurar o Projeto de Radar com Arduino e Processing
 
-#### **Parte 1: Configuração do Arduino**
+### **Parte 1: Configuração do Arduino**
 
-1. **Baixar o Software Arduino**
+1. Baixar o Software Arduino
    - Acesse [aqui](https://www.arduino.cc/en/software) o site oficial do Arduino e faça o download do software correspondente ao seu sistema operacional.
 
-2. **Inserir o Código no Arduino**
+2. Inserir o Código no Arduino
    - Abra o Arduino IDE.
    - Copie o código do projeto e cole na área de trabalho do Arduino IDE.
 
-3. **Configurar a Placa Arduino**
+3. Configurar a Placa Arduino
    - No menu superior, vá em `Ferramentas` > `Placa` > `Arduino AVR Boards`.
    - Selecione o modelo da sua placa Arduino (ex: Arduino Uno, Arduino Mega, etc.).
 
-4. **Selecionar a Porta de Comunicação**
+4. Selecionar a Porta de Comunicação
    - Ainda em `Ferramentas`, vá em `Porta` e selecione a porta à qual seu Arduino está conectado (ex: COM3, COM4, etc.).
 
-5. **Compilar e Enviar o Código**
+5. Compilar e Enviar o Código
    - Clique no ícone de verificação (✓) para compilar o código.
    - Em seguida, clique no ícone de seta (→) para enviar o código compilado para a placa Arduino.
+##
+### **Parte 2: Configuração do Processing**
 
-#### **Parte 2: Configuração do Processing**
-
-1. **Baixar o Software Processing**
+1. Baixar o Software Processing
    - Acesse [aqui](https://processing.org/download) e baixe o software Processing. Instale-o em seu computador.
 
-2. **Fechar o Arduino IDE**
+2. Fechar o Arduino IDE
    - Após enviar o código para a placa Arduino, feche o Arduino IDE. Isso é necessário porque o Processing usará a mesma porta de comunicação, evitando conflitos.
 
-3. **Inserir o Código no Processing**
+3. Inserir o Código no Processing
    - Abra o Processing.
    - Copie o código do projeto e cole na área de trabalho do Processing.
 
-4. **Configurar a Porta no Código do Processing**
+4. Configurar a Porta no Código do Processing
    - No código do Processing, encontre a linha `myPort = new Serial(this, "COM4", 9600);`.
    - Substitua `"COM4"` pela porta à qual o Arduino está conectado (a mesma configurada no Arduino IDE).
 
-5. **Configurar a Fonte no Processing**
+5. Configurar a Fonte no Processing
    - Vá em `Ferramentas` > `Criar Fonte` e selecione a fonte desejada.
    - Copie o nome do arquivo da fonte exibido no campo `filename`.
    - No código do Processing, encontre a linha `orcFont = loadFont("AgencyFB-Reg-30.vlw");` e substitua `"AgencyFB-Reg-30.vlw"` pelo nome da fonte copiada.
 
-6. **Ajustar o Tamanho da Janela**
+6. Ajustar o Tamanho da Janela
    - No código do Processing, encontre a linha `size(1366, 768);`.
    - Altere os valores para o tamanho da tela do monitor onde o radar será exibido (ex: `size(1920, 1080);` para um monitor Full HD).
 
-7. **Compilar e Executar o Código**
+7. Compilar e Executar o Código
    - Clique no ícone de play (►) para compilar e executar o código.
    - Uma nova janela abrirá com a interface do radar, já começando a escanear.
 
@@ -327,7 +327,7 @@ https://github.com/JhonatanBarboza/Arduino/assets/151884657/1bbd1c38-a06d-427c-8
 - Feche sempre o Arduino IDE antes de iniciar o Processing para evitar conflitos de porta.
 
 Seguindo esses passos, o projeto de radar estará configurado e funcionando corretamente.
-
+##
 ### Responsáveis
 - Jhonatan Barboza da Silva
 - João Gabriel Pieroli da Silva
